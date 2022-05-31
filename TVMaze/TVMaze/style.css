@@ -197,8 +197,12 @@ form h3 {
 }
 
 .pop img {
-
+  float: left;
   margin: auto;
+}
+
+.pop hr {
+  clear: both;
 }
 
 .pop div {

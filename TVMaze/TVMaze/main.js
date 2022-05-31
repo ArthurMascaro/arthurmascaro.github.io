@@ -41,6 +41,15 @@ window.onload = ()=>{
             for (var i in data) {
               let div = document.createElement("div")
 
+              let imagem = document.createElement("img")
+              try{
+                imagem.setAttribute("src", data[i].image.medium)
+              }
+              catch(e){
+                imagem.setAttribute("src", "https://demofree.sirv.com/nope-not-here.jpg")
+              }
+              div.append(imagem)
+
               let season = document.createElement("h2")
               season.innerText = "Temporada: "+data[i].season
               div.append(season)
@@ -53,15 +62,6 @@ window.onload = ()=>{
               let nome = document.createElement("h4") 
               nome.innerText = "Nome: "+data[i].name
               div.append(nome)
-              
-              let imagem = document.createElement("img")
-              try{
-                imagem.setAttribute("src", data[i].image.medium)
-              }
-              catch(e){
-                imagem.setAttribute("src", "https://demofree.sirv.com/nope-not-here.jpg")
-              }
-              div.append(imagem)
 
               let summary = document.createElement("h5")
               summary.innerHTML = data[i].summary
