@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css? family=Poppins:100,200,300,400,500,600,788,888,900");
+
+* {
+  margin: 0;
+}
+
+img {
+  width: 350px;
+  height: 350px;
+  display: block;
+}
+
+main div {
+  border: 2px solid #333;
+  margin-top: 10px;
+  width: 350px;
+  padding: 5px;
+  height: auto;
+  display: inline-block;
+}
+
+main {
+  width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10em;
+  column-count: 3;
+  column-gap: 15px;
+}
+
+form {
+  position: relative;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  margin: auto;
+  margin: 100px auto;
+  padding-left: 240px;
+}
+
+.container h2 {
+  font-size: 4rem;
+  color: rgb(127, 127, 127);
+  position: absolute;
+  transform: translate(-50%, -58%);
+}
+
+.container h2::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 4px;
+  background-color: #03a9f4;
+  left: 50%;
+  bottom: -10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.container h2:hover {
+  cursor: pointer;
+}
+
+.container h2:hover::after {
+  cursor: pointer;
+  width: 100%;
+  left: 0;
+}
+
+.container h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 2px#83a9f4;
+}
+
+.container h2:nth-child(2) {
+  color: #03a9f4;
+  animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%);
+  }
+
+  50% {
+
+    clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%);
+  }
+}
+
+.form {
+  margin-top: 3.7em;
+  text-align: center;
+}
+
+form h3 {
+  position: absolute;
+  margin-top: 3em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.search-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  background-color: #353535;
+  line-height: 40px;
+  padding: 10px 10px 0px 10px;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.search-input {
+  background: #353535;
+  color: #fff;
+  outline: none;
+  border: none;
+  line-height: 40px;
+  width: 0px;
+  float: left;
+  font-size: 1em;
+  transition: 0.7s ease;
+}
+
+.search-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #353535;
+  padding: 12px;
+  border-radius: 50%;
+  float: right;
+  color: #22ffc8;
+  transition: 0.4s ease;
+}
+
+.search-box:hover>.search-input,
+.search-input:focus {
+  width: 240px;
+  margin: 0px 8px;
+}
+
+.search-box:hover>.search-btn,
+.search-input:focus+.search-btn {
+  background: #22ffc0;
+  color: #101010;
+}
+
+.results{
+  font-family:"Montserrat",sans-serif;
+  font-size:1rem;
+  letter-spacing:2px;
+  text-align:center;
+  color:#0084ff;
+}
+
+.pop {
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: yellow;
+  width: 70%;
+  height: 90%;
+  z-index: 1;
+  display: none;
+}
+
+.pop img {
+
+  margin: auto;
+}
+
+.pop div {
+  background-color: rgb(123, 108, 108);
+}
