@@ -75,7 +75,7 @@ window.onload = ()=>{
                           url: `https://api.tvmaze.com/people/${id}`,
                           type: "get",
                           success: (pessoa) => {
-                            document.querySelector("input").value = id
+                            document.querySelector("input").value = ""
                             results.innerText = `Séries com ${pessoa.name}:`
                           }
                         })
