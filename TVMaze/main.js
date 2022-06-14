@@ -146,7 +146,10 @@ window.onload = ()=>{
 
 
     //Add these to body
-    body.append(DIV)
+    let linked = document.createElement("a")
+    linked.setAttribute("href", "#look")
+    linked.append(DIV)
+    body.append(linked)
   }
   function getMovies(name){
     if(name > 0){

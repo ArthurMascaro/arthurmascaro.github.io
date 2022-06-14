@@ -19,6 +19,11 @@ main div {
   display: inline-block;
 }
 
+main a {
+  text-decoration: none;
+  color: inherit;
+}
+
 hr {
   background-color: black;
   border: 1px solid black;
