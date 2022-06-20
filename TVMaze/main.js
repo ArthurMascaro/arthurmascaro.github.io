@@ -41,58 +41,58 @@ window.onload = ()=>{
     DIV.addEventListener("click", () => {
       let id = data.show.id
 
-        $.ajax({
-          url: "https://api.tvmaze.com/shows/"+id+"/episodes",
-          type: "get",
-          success: (data) => {
-            let div = document.createElement("div")
-            popup.innerHTML = ""
-            popup.append(a)
-            $.ajax({
+      $.ajax({
+        url: "https://api.tvmaze.com/shows/" + id + "/episodes",
+        type: "get",
+        success: (data) => {
+          let div = document.createElement("div")
+          popup.innerHTML = ""
+          popup.append(a)
+          $.ajax({
               url: "https://api.tvmaze.com/shows/"+id+"/cast",
               type: "get",
               success: (person) => {
 
-                let title = document.createElement("h3")
-                title.innerText = "Elenco: "
-                div.append(title)
+              let title = document.createElement("h3")
+              title.innerText = "Elenco: "
+              div.append(title)
 
-                let listaAtores = document.createElement("p")
-                listaAtores.classList.add("atores")
+              let listaAtores = document.createElement("p")
+              listaAtores.classList.add("atores")
 
-                for (var k in person) {
-                  let id = person[k].person.id
-                  let link = document.createElement("a")
-                  link.setAttribute("href",  "#")
-                  link.addEventListener("click", () => {
-                    $.ajax({
-                      url: `https://api.tvmaze.com/people/${id}/castcredits?embed=show`,
-                      type: "get",
-                      success: (data) => {
-                        popup.style.display = "none"
-                        body.innerHTML = ""
-                        $.ajax({
-                          url: `https://api.tvmaze.com/people/${id}`,
-                          type: "get",
-                          success: (pessoa) => {
-                            document.querySelector("input").value = ""
-                            results.innerText = `Séries com ${pessoa.name}:`
-                          }
-                        })
-                        for (item in data){
-                          CreateSerie(data[item]._embedded)
+              for (var k in person) {
+                let id = person[k].person.id
+                let link = document.createElement("a")
+                link.setAttribute("href", "#")
+                link.addEventListener("click", () => {
+                  $.ajax({
+                    url: `https://api.tvmaze.com/people/${id}/castcredits?embed=show`,
+                    type: "get",
+                    success: (data) => {
+                      popup.style.display = "none"
+                      body.innerHTML = ""
+                      $.ajax({
+                        url: `https://api.tvmaze.com/people/${id}`,
+                        type: "get",
+                        success: (pessoa) => {
+                          document.querySelector("input").value = ""
+                          results.innerText = `Séries com ${pessoa.name}:`
                         }
+                      })
+                      for (item in data) {
+                        CreateSerie(data[item]._embedded)
                       }
-                    })
+                    }
                   })
-                  let ator = document.createElement("p")
-                  ator.innerHTML = person[k].person.name
-                  link.append(ator)
-                  listaAtores.append(link)
-                }
-               div.append(listaAtores)
+                })
+                let ator = document.createElement("p")
+                ator.innerHTML = person[k].person.name
+                link.append(ator)
+                listaAtores.append(link)
               }
-            })
+              div.append(listaAtores)
+            }
+          })
 
 
             for (var i in data) {
