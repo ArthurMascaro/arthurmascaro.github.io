@@ -144,7 +144,6 @@ window.onload = ()=>{
         popup.style.display = "inline-block";
     })
 
-
     //Add these to body
     let linked = document.createElement("a")
     linked.setAttribute("href", "#look")
