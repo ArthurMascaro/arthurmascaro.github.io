@@ -144,7 +144,6 @@ window.onload = ()=>{
         popup.style.display = "inline-block";
     })
 
-
     //Add these to body
     let linked = document.createElement("a")
     linked.setAttribute("href", "#look")
@@ -194,6 +193,5 @@ window.onload = ()=>{
   const input = document.querySelector("input")
   input.addEventListener("keyup", ()=>{
     getMovies(input.value)
-    
   })
 }
