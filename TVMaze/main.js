@@ -194,5 +194,6 @@ window.onload = ()=>{
   const input = document.querySelector("input")
   input.addEventListener("keyup", ()=>{
     getMovies(input.value)
+    
   })
 }
