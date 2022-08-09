@@ -12,46 +12,47 @@
 
     <form action="">
       <label for="QntNumeroLinhas">Numero de linhas</label>
-      <input
-        type="number"
-        name="Numero de linhas"
-        id="numberqnt"
-        max="30"
-        min="1"
-      />
+      <input type="number" id="numberqnt" max="30" min="1" />
+      <button type="submit">Iniciar</button>
     </form>
 
     <div class="piramide"></div>
 
     <script>
-      const FormT = document.querySelector("form");
-      FormT.setAttribute("onclick", "iniciar()");
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        iniciar();
+      });
 
       function iniciar() {
         document.querySelector(".piramide").innerHTML = "";
-        var linha = "1";
+
+        var degrau = "1";
         const ObjInput = document.querySelector("#numberqnt");
         var qntLinhas = ObjInput.value;
+
         for (let i = 0; i < qntLinhas; i++) {
           let p = document.createElement("p");
-          p.innerText = linha;
+          p.innerText = degrau;
           document.querySelector(".piramide").appendChild(p);
-          linha = CriarLinha(linha);
+          degrau = CriarLinha(degrau);
         }
       }
 
       function CriarLinha(linha) {
-        var qnt = 1;
-        var concatenada = "";
+        var Quantidade = 1;
+        var StringConcatenada = "";
         var linhaFinal = "";
+        var QuantidadeString = "";
         var total = 0;
 
         if (linha.length == 1) {
-          total += parseInt(linha[0]) * qnt;
-          qnt = 1;
-          let Stringqnt = String(qnt);
-          concatenada = Stringqnt + linha[0];
-          linhaFinal += concatenada;
+          total += parseInt(linha[0]) * Quantidade;
+          Quantidade = 1;
+          QuantidadeString = String(Quantidade);
+          StringConcatenada = QuantidadeString + linha[0];
+          linhaFinal += StringConcatenada;
           return linhaFinal;
         }
 
